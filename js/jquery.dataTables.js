@@ -9323,6 +9323,9 @@
 			/* Remove the settings object from the settings array */
 			var idx = $.inArray( settings, DataTable.settings );
 			if ( idx !== -1 ) {
+				for (var sKey in settings) {
+					settings[sKey] = null;
+				}
 				DataTable.settings.splice( idx, 1 );
 			}
 		} );
